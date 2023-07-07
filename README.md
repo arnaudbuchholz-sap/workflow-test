@@ -8,3 +8,4 @@ Using `gh` to create a Pull Request and merge it automatically.
 2
 3
 4
+5
