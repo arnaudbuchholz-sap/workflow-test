@@ -1,0 +1,19 @@
+name: Deploy client to production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  to_production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📂 Checkout production branch
+        uses: actions/checkout@v3
+        with:
+          ref: production
+
+      - name: 🏗️ Merge with main
+        run: git merge origin/main
+
+      - name: 📌 Push production branch
+        run: git push
