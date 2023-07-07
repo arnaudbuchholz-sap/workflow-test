@@ -28,3 +28,9 @@ jobs:
         run: gh pr create --base production --head main --fill --no-maintainer-edit
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+
+      - name: 📦 Merge PR
+        run: gh pr merge --auto --rebase
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+  
