@@ -7,8 +7,8 @@ jobs:
   deploy-to-production:
     runs-on: ubuntu-latest
     steps:
-      # - name: 📂 Checkout
-      #   uses: actions/checkout@v3
+      - name: 📂 Checkout
+        uses: actions/checkout@v3
 
       # - name: 🏗️ Merge main to production
       #   uses: everlytic/branch-merge@c4a244dc23143f824ae6c022a10732566cb8e973
