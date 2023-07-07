@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  to_production:
+  deploy-to-production:
     runs-on: ubuntu-latest
     steps:
       - name: 📂 Checkout main branch
@@ -18,7 +18,7 @@ jobs:
           ref: production
 
       - name: 🏗️ Merge with origin/main
-        run: git merge origin/main
+        run: git merge origin/main --allow-unrelated-histories
 
       - name: 📌 Push production branch
         run: git push
