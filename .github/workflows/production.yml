@@ -12,8 +12,8 @@ jobs:
         with:
           ref: production
 
-      - name: 🏗️ Merge with main
-        run: git merge main
+      - name: 🏗️ Merge with remote/main
+        run: git merge remote/main
 
       - name: 📌 Push production branch
         run: git push
