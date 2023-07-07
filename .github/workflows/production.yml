@@ -17,20 +17,13 @@ jobs:
         with:
           ref: main
   
-      # - name: 🏗️ Merge main to production
-      #   uses: everlytic/branch-merge@c4a244dc23143f824ae6c022a10732566cb8e973
-      #   with:
-      #     github_token: ${{ secrets.MY_TOKEN }}
-      #     source_ref: 'main'
-      #     target_branch: 'production'
-
       - name: 🏗️ Create PR
         run: gh pr create --base production --head main --fill --no-maintainer-edit
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
       - name: 📦 Merge PR
-        run: gh pr merge --auto --rebase
+        run: gh pr merge --auto
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
   
