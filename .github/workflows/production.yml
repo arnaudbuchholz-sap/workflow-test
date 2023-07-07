@@ -18,7 +18,7 @@ jobs:
           ref: main
   
       - name: 🏗️ Create PR
-        run: gh pr create --base production --head main --fill --no-maintainer-edit
+        run: gh pr create --base production --head main --fill
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
