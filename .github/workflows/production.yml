@@ -22,8 +22,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
 
-      - name: 📦 Merge PR
-        run: gh pr merge --auto --merge
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+      # - name: 📦 Merge PR
+      #   run: gh pr merge --auto --rebase
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
   
