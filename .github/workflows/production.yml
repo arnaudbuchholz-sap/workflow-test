@@ -7,20 +7,12 @@ jobs:
   deploy-to-production:
     runs-on: ubuntu-latest
     steps:
-      - name: 📂 Checkout main branch
+      - name: 📂 Checkout
         uses: actions/checkout@v3
+
+      - name: 📂 Merge main to production
+        uses: everlytic/branch-merge@c4a244dc23143f824ae6c022a10732566cb8e973
         with:
-          ref: main
-          token: ${{ secrets.MY_TOKEN }}
-
-      - name: 📂 Checkout production branch
-        uses: actions/checkout@v3
-        with:
-          ref: production
-          token: ${{ secrets.MY_TOKEN }}
-
-      - name: 🏗️ Merge with origin/main
-        run: git merge origin/main --allow-unrelated-histories
-
-      - name: 📌 Push production branch
-        run: git push
+          github_token: ${{ secrets.MY_TOKEN }}
+          source_ref: 'main'
+          target_branch: 'production'
