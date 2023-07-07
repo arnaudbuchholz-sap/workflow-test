@@ -13,7 +13,7 @@ jobs:
           ref: production
 
       - name: 🏗️ Merge with main
-        run: git merge origin/main
+        run: git merge main
 
       - name: 📌 Push production branch
         run: git push
